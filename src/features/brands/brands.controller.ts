@@ -83,7 +83,7 @@ async function getBrand(req: Request, res: Response, next: NextFunction) {
 }
 
 
-async function editBrand(req: Request, res: Response, next: NextFunction) {
+async function updateBrand(req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
 
   const brandId = Number(id)
@@ -113,4 +113,4 @@ async function deleteBrand(req: Request, res: Response, next: NextFunction) {
 }
 
 
-export { getAllBrands, getAllActiveBrands, createBrand, getBrand, editBrand, deleteBrand }
+export { getAllBrands, getAllActiveBrands, createBrand, getBrand, updateBrand, deleteBrand }
