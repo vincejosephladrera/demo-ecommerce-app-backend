@@ -68,6 +68,22 @@ async function createCategory(req: Request, res: Response, next: NextFunction) {
   return void (res.status(200).json({ category }));
 }
 
+async function getCategory(req: Request, res: Response, next: NextFunction) {
+  const { id } = req.params
+
+  const categoryId = Number(id)
+
+  const category = await prisma.category.findUnique({
+    where: {
+      id: categoryId
+    }
+  })
+
+  return void (res.status(200).json({
+    category
+  }))
+}
+
 
 async function editCategory(req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
@@ -99,4 +115,6 @@ async function deleteCategory(req: Request, res: Response, next: NextFunction) {
 }
 
 
-export { getAllCategories, getAllActiveCategories, createCategory, editCategory, deleteCategory }
+
+
+export { getAllCategories, getAllActiveCategories, createCategory, getCategory, editCategory, deleteCategory }
