@@ -4,6 +4,7 @@ import cors from 'cors';
 import adminRouter from './features/auth-admin/admin.router';
 import categoriesRouter from './features/categories/categories.router';
 import brandsRouter from './features/brands/brands.router';
+import productsRouter from './features/products/products.router';
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use('/admin', adminRouter)
 app.use('/categories', categoriesRouter)
 
 app.use('/brands', brandsRouter)
+
+app.use('/products', productsRouter)
 
 
 export default app;
