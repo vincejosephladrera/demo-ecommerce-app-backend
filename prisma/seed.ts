@@ -17,19 +17,58 @@ async function main() {
 
   await prisma.category.create({
     data: {
+      isActive: true,
       name: "Men's Fashion",
     },
   });
 
   await prisma.category.create({
     data: {
+      isActive: true,
       name: "Women's Fashion",
     },
   });
 
   await prisma.category.create({
     data: {
+      isActive: true,
       name: "Kids' Clothing",
+    },
+  });
+
+
+  await prisma.brand.create({
+    data: {
+      isActive: true,
+      name: "Nike",
+    },
+  });
+
+  await prisma.brand.create({
+    data: {
+      isActive: true,
+      name: "Zara",
+    },
+  });
+
+  await prisma.brand.create({
+    data: {
+      isActive: true,
+      name: "Uniqlo",
+    },
+  });
+
+  await prisma.brand.create({
+    data: {
+      isActive: true,
+      name: "Levi's",
+    },
+  });
+
+  await prisma.brand.create({
+    data: {
+      isActive: true,
+      name: "H&M",
     },
   });
 }
