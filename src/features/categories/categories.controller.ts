@@ -85,7 +85,7 @@ async function getCategory(req: Request, res: Response, next: NextFunction) {
 }
 
 
-async function editCategory(req: Request, res: Response, next: NextFunction) {
+async function updateCategory(req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
 
   const categoryId = Number(id)
@@ -117,4 +117,4 @@ async function deleteCategory(req: Request, res: Response, next: NextFunction) {
 
 
 
-export { getAllCategories, getAllActiveCategories, createCategory, getCategory, editCategory, deleteCategory }
+export { getAllCategories, getAllActiveCategories, createCategory, getCategory, updateCategory, deleteCategory }

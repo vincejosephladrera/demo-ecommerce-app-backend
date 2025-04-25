@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { catchAsync } from "../../utils/catchAsync";
 
-import { getAllCategories, getAllActiveCategories, createCategory, getCategory, editCategory, deleteCategory } from "./categories.controller";
+import { getAllCategories, getAllActiveCategories, createCategory, getCategory, updateCategory, deleteCategory } from "./categories.controller";
 
 const categoriesRouter = Router()
 
@@ -13,7 +13,7 @@ categoriesRouter.post('/', catchAsync(createCategory))
 
 categoriesRouter.get('/:id', catchAsync(getCategory))
 
-categoriesRouter.patch('/:id', catchAsync(editCategory))
+categoriesRouter.patch('/:id', catchAsync(updateCategory))
 
 categoriesRouter.delete('/:id', catchAsync(deleteCategory))
 
