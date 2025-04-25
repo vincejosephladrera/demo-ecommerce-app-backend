@@ -14,8 +14,45 @@ datasource db {
 }
 
 model Admin {
-  id String @id @default(uuid())
+  id Int @id @default(autoincrement())
   name String
   email String @unique
   password String
 }
+
+model Customer{
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+}
+
+model Product{
+  id Int @id @default(autoincrement())
+  isActive Boolean @default(false)
+  name String
+  categories Category[]
+  brand Brand @relation(fields: [brandId], references: [id])
+  brandId Int
+  colorVariants String[] @default([])
+  sizeVariants String[] @default([])
+  thumbnailUrl String
+  photosUrl String[]
+}
+
+model Category{
+  id Int @id @default(autoincrement())
+  isActive Boolean @default(false)
+  name String @unique
+  products Product[]
+}
+
+model Brand{
+  id Int @id @default(autoincrement())
+  isActive Boolean @default(false)
+  name String
+  products Product[]
+}
+
+
+

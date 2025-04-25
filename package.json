@@ -1,10 +1,14 @@
 {
 	"name": "demo-e-commerce-app-backend",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "index.ts",
+	"prisma": {
+		"seed": "ts-node prisma/seed.ts"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "nodemon src/index.ts"
+		"dev": "nodemon src/index.ts",
+		"seed": "ts-node prisma/seed.ts"
 	},
 	"author": "Vince Joseph Ladrera",
 	"license": "ISC",

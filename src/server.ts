@@ -2,6 +2,7 @@ import express from 'express'
 import morgan from 'morgan';
 import cors from 'cors';
 import adminRouter from './features/auth-admin/admin.router';
+import categoriesRouter from './features/categories/categories.router';
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/admin', adminRouter)
+
+app.use('/categories', categoriesRouter)
 
 
 export default app;

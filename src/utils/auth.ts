@@ -15,7 +15,7 @@ export function hashPassword(password: string) {
 
 type CombinedUser = {
   email: string,
-  id: string
+  id: number,
   role?: 'user' | 'admin'
 }
 
