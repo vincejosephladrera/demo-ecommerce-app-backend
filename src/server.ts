@@ -5,6 +5,7 @@ import adminRouter from './features/auth-admin/admin.router';
 import categoriesRouter from './features/categories/categories.router';
 import brandsRouter from './features/brands/brands.router';
 import productsRouter from './features/products/products.router';
+import productVariantsRouter from './features/product-variants/productVariants.router';
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.use('/categories', categoriesRouter)
 app.use('/brands', brandsRouter)
 
 app.use('/products', productsRouter)
+
+app.use('/product-variants', productVariantsRouter)
 
 
 export default app;
